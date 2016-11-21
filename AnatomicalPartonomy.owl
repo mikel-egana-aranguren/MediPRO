@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy#"
+     xml:base="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy">
+        <rdfs:comment xml:lang="en">The first problems to start with could be   : 
+
+1) Anatomical partonomy problem
+
+we have definded the anatomical partonomy by hasPart and clousure axiomes (disjunctions) 
+
+Ex
+Stomach hasAnatomicalPart  some body of stomach 
+Stomach hasAnatomicalPart  some fundus 
+Stomach hasAnatomicalPart  some antrum              
+Stomach hasAnatomicalPart  some pylorus 
+  Stomach hasAnatomicalPart  only some (body of stomach OR fundus OR antrum OR pylorus) 
+
+we need to reason with isPart .Now we are using inverse relation
+
+in order to transform in EL : 
+-  can we eliminate the clousure axiome  ?
+-  can we add per OPPL  for every hasAnatomicalPart  an isAnatomicalPart  axiom for the corresponding class ?
+          Ex:
+body of stomach isAnatomicalPart some Stomach
+fundus  isAnatomicalPart some Stomach 
+antrum  isAnatomicalPart some Stomach 
+pylorus  isAnatomicalPart some Stomach             
+
+I still do not now how to solve the problem with entire vs part 
+
+A)
+
+introduce &quot;entire stomac&quot; and use isAffecting for all parts including entire stomach (+ define an annotation property  &quot;preferred label&quot; = stomach)
+
+Stomach hasAnatomicalPart  some entire stomach 
+Stomach hasAnatomicalPart  some body of stomach 
+Stomach hasAnatomicalPart  some fundus 
+Stomach hasAnatomicalPart  some antrum              
+Stomach hasAnatomicalPart  some pylorus 
+
+ex : Pangastritis IsAffectig some entire_stomach 
+ 
+
+B)
+
+introduce isAffectingEntire ( as subproperty of  isAffecting) and keep only stomach for the concept of entire stomach
+
+Stomach hasAnatomicalPart  some body of stomach 
+Stomach hasAnatomicalPart  some fundus 
+Stomach hasAnatomicalPart  some antrum              
+Stomach hasAnatomicalPart  some pylorus 
+
+ex: Pangastritis IsAffectigEntire some Stomach</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_d5a7c162_20b6_4ca6_8e28_0fc7131656d4 -->
+
+    <owl:ObjectProperty rdf:about="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_d5a7c162_20b6_4ca6_8e28_0fc7131656d4">
+        <rdfs:label xml:lang="eu">hasAnatomicalPart</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_6439123b_3b5d_4eb6_90c6_8cb53a8df7c9 -->
+
+    <owl:Class rdf:about="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_6439123b_3b5d_4eb6_90c6_8cb53a8df7c9">
+        <rdfs:label xml:lang="eu">fundus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_6dc19140_0f15_47d3_a4fa_7e0abb5522b8 -->
+
+    <owl:Class rdf:about="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_6dc19140_0f15_47d3_a4fa_7e0abb5522b8">
+        <rdfs:label xml:lang="eu">body-of-stomach</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_acf1649b_af16_4029_a00d_4693ddb168ae -->
+
+    <owl:Class rdf:about="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_acf1649b_af16_4029_a00d_4693ddb168ae">
+        <rdfs:label xml:lang="eu">antrum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_e2c3ff04_eb3b_4cf9_a98a_593d071ce937 -->
+
+    <owl:Class rdf:about="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_e2c3ff04_eb3b_4cf9_a98a_593d071ce937">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_d5a7c162_20b6_4ca6_8e28_0fc7131656d4"/>
+                <owl:someValuesFrom rdf:resource="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_6439123b_3b5d_4eb6_90c6_8cb53a8df7c9"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_d5a7c162_20b6_4ca6_8e28_0fc7131656d4"/>
+                <owl:someValuesFrom rdf:resource="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_6dc19140_0f15_47d3_a4fa_7e0abb5522b8"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_d5a7c162_20b6_4ca6_8e28_0fc7131656d4"/>
+                <owl:someValuesFrom rdf:resource="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_acf1649b_af16_4029_a00d_4693ddb168ae"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_d5a7c162_20b6_4ca6_8e28_0fc7131656d4"/>
+                <owl:someValuesFrom rdf:resource="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_ff2e9b10_0623_49f3_b945_16fc278fa32f"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_d5a7c162_20b6_4ca6_8e28_0fc7131656d4"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_6439123b_3b5d_4eb6_90c6_8cb53a8df7c9"/>
+                            <rdf:Description rdf:about="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_6dc19140_0f15_47d3_a4fa_7e0abb5522b8"/>
+                            <rdf:Description rdf:about="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_acf1649b_af16_4029_a00d_4693ddb168ae"/>
+                            <rdf:Description rdf:about="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_ff2e9b10_0623_49f3_b945_16fc278fa32f"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="eu">stomach</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_ff2e9b10_0623_49f3_b945_16fc278fa32f -->
+
+    <owl:Class rdf:about="http://mikeleganaaranguren.com/MediPRO/AnatomicalPartonomy/BIOMO_ff2e9b10_0623_49f3_b945_16fc278fa32f">
+        <rdfs:label xml:lang="eu">pylorus</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
+
