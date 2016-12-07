@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://mikeleganaaranguren.com/medipro"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://mikeleganaaranguren.com/medipro">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="medipro" IRI="http://mikeleganaaranguren.com/medipro#"/>
+    <Prefix name="pattern" IRI="http://www.w3id.org/ontolink/pattern.owl#"/>
+    <Import>http://www.purl.org/ontolink/tawny</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Unreleased Version</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">medipro</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Testing medipro manipulation without loading an ontology</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#body-of-stomach"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#eh"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAnatomicalPart"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#bizkaia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#araba"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#fundus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#zuberoa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#antrum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#lapurdi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#gipuzkoa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#pylorus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#nafarroa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#behenafarroa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#stomach"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAnatomicalPartf"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#eh"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasAnatomicalPart"/>
+            <Class IRI="#araba"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#eh"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasAnatomicalPart"/>
+            <Class IRI="#behenafarroa"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#eh"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasAnatomicalPart"/>
+            <Class IRI="#bizkaia"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#eh"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasAnatomicalPart"/>
+            <Class IRI="#gipuzkoa"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#eh"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasAnatomicalPart"/>
+            <Class IRI="#lapurdi"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#eh"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasAnatomicalPart"/>
+            <Class IRI="#nafarroa"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#eh"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasAnatomicalPart"/>
+            <Class IRI="#zuberoa"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#eh"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasAnatomicalPart"/>
+            <ObjectUnionOf>
+                <Class IRI="#araba"/>
+                <Class IRI="#behenafarroa"/>
+                <Class IRI="#bizkaia"/>
+                <Class IRI="#gipuzkoa"/>
+                <Class IRI="#lapurdi"/>
+                <Class IRI="#nafarroa"/>
+                <Class IRI="#zuberoa"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stomach"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasAnatomicalPart"/>
+            <Class IRI="#antrum"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stomach"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasAnatomicalPart"/>
+            <Class IRI="#body-of-stomach"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stomach"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasAnatomicalPart"/>
+            <Class IRI="#fundus"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stomach"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasAnatomicalPart"/>
+            <Class IRI="#pylorus"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stomach"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasAnatomicalPart"/>
+            <ObjectUnionOf>
+                <Class IRI="#antrum"/>
+                <Class IRI="#body-of-stomach"/>
+                <Class IRI="#fundus"/>
+                <Class IRI="#pylorus"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasAnatomicalPart"/>
+        <ObjectProperty IRI="#isAnatomicalPartf"/>
+    </InverseObjectProperties>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#antrum</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">antrum</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#araba</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">araba</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#behenafarroa</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">behenafarroa</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#bizkaia</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">bizkaia</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#body-of-stomach</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">body-of-stomach</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#eh</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">eh</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#fundus</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">fundus</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#gipuzkoa</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">gipuzkoa</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#hasAnatomicalPart</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">hasAnatomicalPart</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#isAnatomicalPartf</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">isAnatomicalPartf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#lapurdi</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">lapurdi</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#nafarroa</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">nafarroa</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#pylorus</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">pylorus</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#stomach</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">stomach</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#zuberoa</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">zuberoa</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.1.4.20160202-2327) https://github.com/owlcs/owlapi -->
+
