@@ -7,11 +7,16 @@
              [polyglot]
              [reasoner :as r]
              [pattern :as p]])
-  (:import (org.semanticweb.owlapi.model IRI OWLNamedObject OWLOntologyID)
-           (org.semanticweb.owlapi.util SimpleIRIMapper))
+  (:import (org.semanticweb.owlapi.model IRI OWLNamedObject OWLOntologyID OWLClass)
+           (org.semanticweb.owlapi.util SimpleIRIMapper)
+           
+           
+           
+           )
   
   )
 
+; function to load ontology from disk
 (defn get-medipro-ontology []
   (tawny.owl/remove-ontology-maybe
    (OWLOntologyID. 
@@ -26,13 +31,21 @@
    )
   )
 
+; load ontology into medipro var
 (def medipro 
   (get-medipro-ontology)
   )
 
-(println 
-  (inprofile? medipro profile-owl2el)
+
+; get classes of ontology
+(doseq
+    [entity (.getSignature medipro)  
+     :while
+     (instance? OWLClass entity)
+     ]
+    (println entity)
   )
+     
 
 (defclass mikel
   :ontology medipro
@@ -41,26 +54,21 @@
 (save-ontology medipro "AnatomicalPartonomy2.owl" :owl)
 
 
-
-
-
-;;;; Make loaded ontology the default (not recommended)
-
-;(ontology-to-namespace 
-;  (get-medipro-ontology)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; Interesting: get profile and profile violations 
+;
+;(println 
+;  (inprofile? medipro profile-owl2el)
 ;  )
 ;
-;(declare-classes 
-;  eh bizkaia gipuzkoa araba nafarroa zuberoa behenafarroa lapurdi
-;  bilbo donosti berlin
+;(print 
+;  (violations medipro profile-owl2el)
 ;  )
-;
-;(save-ontology "AnatomicalPartonomy2.owl" :owl)
 
 
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; Create ontology from scratch
-
+;
 ;(defontology medipro
 ;  :iri "http://mikeleganaaranguren.com/medipro"
 ;  :prefix "medipro:"
@@ -93,3 +101,18 @@
 ;  )
 ;
 ;(save-ontology "ontology.owl" :owl)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; Make loaded ontology the default (not recommended)
+;
+;(ontology-to-namespace 
+;  (get-medipro-ontology)
+;  )
+;
+;(declare-classes 
+;  eh bizkaia gipuzkoa araba nafarroa zuberoa behenafarroa lapurdi
+;  bilbo donosti berlin
+;  )
+;
+;(save-ontology "AnatomicalPartonomy2.owl" :owl)
